@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('layouts/head'); -%>
-<body>
-<%- include('layouts/navbar'); -%>
-<!-- Page Header-->
-<header class="masthead" style="background-image: url('/assets/img/contact-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="page-heading">
-                    <h1>Create New Post</h1>
-                    <span class="subheading">Have questions? I have answers.</span>
+
+    <body>
+        <%- include('layouts/navbar'); -%>
+            <!-- Page Header-->
+            <header class="masthead" style="background-image: url('/assets/img/contact-bg.jpg')">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-10 mx-auto">
+                            <div class="page-heading">
+                                <h1>Create New Post</h1>
+                                <span class="subheading">Have questions? I have answers.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Main Content-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <p>What would you like to share?</p>
+                        <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work.-->
+                        <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address!-->
+                        <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally!-->
+                        <form action="/posts/store" method="post">
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls">
+                                    <label>Title</label>
+                                    <input class="form-control" id="title" type="text" placeholder="Title"
+                                        name='title' />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls">
+                                    <label>Description</label>
+                                    <textarea rows="5" class="form-control" id="body" name="body"
+                                        placeholder="Description"></textarea>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="success"></div>
+                            <button class="btn btn-primary" id="sendMessageButton" type="submit">Send</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</header>
-<!-- Main Content-->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-            <p>What would you like to share?</p>
-            <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work.-->
-            <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address!-->
-            <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally!-->
-            <form action="/posts/store" method="post">
-                <div class="control-group">
-                    <div class="form-group floating-label-form-group controls">
-                        <label>Title</label>
-                        <input class="form-control" id="title" type="text" placeholder="Title" name = 'Title' />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="form-group floating-label-form-group controls">
-                        <label>Description</label>
-                        <textarea rows="5" class="form-control" id="body" name="body" placeholder="Description"></textarea>
-                    </div>
-                </div>
-                <br />
-                <div id="success"></div>
-                <button class="btn btn-primary" id="sendMessageButton" type="submit">Send</button>
-            </form>
-        </div>
-    </div>
-</div>
-<hr />
-<%- include('layouts/footer'); -%>
-<%- include('layouts/scripts'); -%>
-</body>
+            <hr />
+            <%- include('layouts/footer'); -%>
+                <%- include('layouts/scripts'); -%>
+    </body>
+
 </html>
