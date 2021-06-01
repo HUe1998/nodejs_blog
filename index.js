@@ -2,11 +2,10 @@ const express = require('express');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
 const app = express();
-const bodyParser = require('./node_modules/body-parser');
 const BlogPost = require('./models/BlogPost.js');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 mongoose.connect('mongodb://localhost:27017/nodejs_blog',
